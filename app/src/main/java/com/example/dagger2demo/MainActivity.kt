@@ -8,6 +8,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        
+        val userRepository = UserRepository()
+        val emailService = EmailService()
+
+        val userRegistrationService = UserRegistrationService(userRepository, emailService)
+        userRegistrationService.registerUser("akshay@gmail.com", "1111")
+
     }
 }
